@@ -1,0 +1,115 @@
+[
+  {
+    "id": 1,
+    "name": "Colive PG",
+    "rent": 8000,
+    "image": "/assets/colive1.jpg",
+    "description": "Spacious rooms with WiFi, food, and housekeeping included."
+  },
+  {
+    "id": 2,
+    "name": "2Share PG",
+    "rent": 7000,
+    "image": "/assets/2share.jpg",
+    "description": "Affordable sharing rooms with all amenities."
+  },
+  {
+    "id": 3,
+    "name": "3Share PG",
+    "rent": 6000,
+    "image": "/assets/3_share.jpg",
+    "description": "Budget-friendly PG for students and working professionals."
+  },
+  {
+    "id": 4,
+    "name": "2Share PG",
+    "rent": 7500,
+    "image": "/assets/2_share.jpg",
+    "description": "Modern PG with double sharing rooms, high-speed WiFi, and 24/7 security."
+  },
+  {
+    "id": 5,
+    "name": "3Share PG",
+    "rent": 5800,
+    "image": "/assets/colive3.jpg",
+    "description": "Comfortable triple-sharing rooms with basic facilities and affordable rent."
+  },
+  {
+    "id": 6,
+    "name": "6 Colive PG",
+    "rent": 8500,
+    "image": "/assets/colive5.jpg",
+    "description": "Premium Colive PG offering fully furnished rooms, meals, and recreational areas."
+  },
+   {
+    "id": 7,
+    "name": "7 Colive PG",
+    "rent": 8500,
+    "image": "/assets/colive5.jpg",
+    "description": "Premium Colive PG offering fully furnished rooms, meals, and recreational areas."
+  },
+   {
+    "id": 8,
+    "name": "8 Colive PG",
+    "rent": 8500,
+    "image": "/assets/colive5.jpg",
+    "description": "Premium Colive PG offering fully furnished rooms, meals, and recreational areas."
+  },
+    {
+    "id": 9,
+    "name": "9 Colive PG",
+    "rent": 8000,
+    "image": "/assets/colive1.jpg",
+    "description": "Spacious rooms with WiFi, food, and housekeeping included."
+  },
+  {
+    "id": 10,
+    "name": "2Share PG",
+    "rent": 7000,
+    "image": "/assets/2share.jpg",
+    "description": "Affordable sharing rooms with all amenities."
+  },
+  {
+    "id": 11,
+    "name": "3Share PG",
+    "rent": 6000,
+    "image": "/assets/3_share.jpg",
+    "description": "Budget-friendly PG for students and working professionals."
+  },
+  {
+    "id": 12,
+    "name": "2Share PG",
+    "rent": 7500,
+    "image": "/assets/2_share.jpg",
+    "description": "Modern PG with double sharing rooms, high-speed WiFi, and 24/7 security."
+  },
+  {
+    "id": 13,
+    "name": "3Share PG",
+    "rent": 5800,
+    "image": "/assets/colive3.jpg",
+    "description": "Comfortable triple-sharing rooms with basic facilities and affordable rent."
+  },
+  {
+    "id": 14,
+    "name": "6 Colive PG",
+    "rent": 8500,
+    "image": "/assets/colive5.jpg",
+    "description": "Premium Colive PG offering fully furnished rooms, meals, and recreational areas."
+  },
+   {
+    "id": 15,
+    "name": "6 Colive PG",
+    "rent": 8500,
+    "image": "/assets/colive5.jpg",
+    "description": "Premium Colive PG offering fully furnished rooms, meals, and recreational areas."
+  },
+   {
+    "id": 16,
+    "name": "6 Colive PG",
+    "rent": 8500,
+    "image": "/assets/colive5.jpg",
+    "description": "Premium Colive PG offering fully furnished rooms, meals, and recreational areas."
+  }
+
+]
