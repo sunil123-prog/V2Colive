@@ -16,7 +16,7 @@ const ProfileScreen = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const tenantId = user?.tenantId;
 
-  console.log("Tenant ID:", tenantId);
+  // console.log("Tenant ID:", tenantId);
 
   const [updateProfileData, setUpdateProfileData] = useState({
     fullName: "",
@@ -76,11 +76,14 @@ const ProfileScreen = () => {
       fullName: updateProfileData.fullName,
       ...(updateProfileData.password && {
         password: updateProfileData.password,
+        confirmPassword: updateProfileData.confirmPassword
       }),
     };
 
+    console.log(payload);
+
     try {
-      const resultAction = await dispatch(updateProfile({ tenantId, payload }));
+      const resultAction = await dispatch(updateProfile({ tenantId,updatedData: payload }));
       if (updateProfile.fulfilled.match(resultAction)) {
         toast.success("Profile Updated!...", {
           position: "top-right",

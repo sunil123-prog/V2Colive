@@ -18,15 +18,17 @@ export const fetchProfile = createAsyncThunk(
 
 export const updateProfile = createAsyncThunk(
   "profile/updateProfile",
-  async ({ id, updatedData }, { rejectWithValue }) => {
+  async ({ tenantId, updatedData }, { rejectWithValue }) => {
+    
     try {
       const user = JSON.parse(localStorage.getItem("user"));
 
       const response = await axios.put(
-        `${BASEURL}/tenants/${id}`,
+        `${BASEURL}/tenants/${tenantId}`,
         { ...updatedData },
         { headers: { "Content-Type": "application/json" } }
       );
+      
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response?.data || "Error updating profile");
@@ -37,7 +39,13 @@ export const updateProfile = createAsyncThunk(
 const profileSlice = createSlice({
   name: "profile",
   initialState: {
-    profile: null,
+    profile: {
+      fullName: "",
+      email: "",
+      mobile: "",
+      password: "",
+      confirmPassword: "",
+    },
     loading: false,
     error: null,
     success: false,

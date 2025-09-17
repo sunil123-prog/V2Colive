@@ -21,7 +21,11 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const [loginData, setLoginData] = useState({ email: "", password: "" });
+  // const [loginData, setLoginData] = useState({ email: "", password: "" });
+  const [loginData, setLoginData] = useState({
+    identifier: "", password: ""
+  });
+
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -34,7 +38,14 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post(`${BASEURL}/tenants/login`, loginData);
+
+      const isEmail = /\S+@\S+\.\S+/.test(loginData.identifier);
+      const payload = isEmail ? {
+        email: loginData.identifier, password: loginData.password
+      } : {
+        mobile: loginData.identifier, password: loginData.password
+      }
+      const res = await axios.post(`${BASEURL}/tenants/login`, payload);
       dispatch(loggedInUser(res.data));
 
       toast.success("Login Successful!...", {
@@ -119,8 +130,8 @@ const Login = () => {
                     <Form.Control
                       type="text"
                       placeholder="Enter email or mobile number"
-                      name="email"
-                      value={loginData.email}
+                      name="identifier"
+                      value={loginData.identifier}
                       onChange={onChangeLogin}
                       required
                     />
