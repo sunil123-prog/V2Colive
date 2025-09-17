@@ -22,19 +22,22 @@ const TermsAndConditions = () => {
   };
 
   const handleAccept = () => {
-  dispatch(termsAccepted());
+    dispatch(termsAccepted());
 
-  toast.success("✅ Terms accepted!", {
-    position: "top-right",
-    autoClose: 2000,
-    hideProgressBar: false,
-    pauseOnHover: true,
-    draggable: true,
-    transition: Bounce,
-  });
+    toast.success("Thank you for accepting our terms and conditions!...", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
 
-  setTimeout(() => navigate("/login"), 2000);
-};
+    setTimeout(() => navigate("/login"), 2000);
+  };
 
   return (
     <div
@@ -220,10 +223,15 @@ const TermsAndConditions = () => {
         </ul>
       </div>
 
-
       {/* Checkbox */}
-      <div style={{ display: "flex", alignItems: "center", marginBottom: "15px" }}>
-        <input type="checkbox" id="acceptCheck" onChange={handleCheckboxChange} />
+      <div
+        style={{ display: "flex", alignItems: "center", marginBottom: "15px" }}
+      >
+        <input
+          type="checkbox"
+          id="acceptCheck"
+          onChange={handleCheckboxChange}
+        />
         <label htmlFor="acceptCheck" style={{ marginLeft: "10px" }}>
           I am accepting all the above Terms & Conditions
         </label>

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import tenants from '../tenants.json';
+import tenants from "../tenants.json";
 import { Container, Row, Col, Card, Button, Pagination } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function TenantList() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -21,25 +22,31 @@ function TenantList() {
     <Container className="mt-4">
       <h1 className="text-center mb-4">Our PG</h1>
       <Row>
-        {currentTenants.map((tenant) => (
+        {currentTenants.map((tenant, index) => (
           <Col md={4} key={tenant.id} className="mb-4">
-            <Card>
-              <Card.Img
-                variant="top"
-                src={tenant.image}
-                style={{ height: "200px", objectFit: "cover" }}
-              />
-              <Card.Body className="text-center">
-                <Card.Title>{tenant.name}</Card.Title>
-                <Card.Text>
-                  <strong>Rent:</strong> ₹{tenant.rent}
-                </Card.Text>
-                <Card.Text>Description: {tenant.description}</Card.Text>
-                <Link to={`/tenant/${tenant.id}`}>
-                  <Button variant="primary">View More</Button>
-                </Link>
-              </Card.Body>
-            </Card>
+            {/* Motion wrapper for scroll animation */}
+            <motion.div
+              initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <Card className="shadow-sm border-0 rounded-3">
+                <Card.Img
+                  variant="top"
+                  src={tenant.image}
+                  style={{ height: "300px", objectFit: "cover" }}
+                />
+                <Card.Body className="text-center">
+                  <Card.Title>{tenant.name}</Card.Title>
+                  <Card.Text>Description: {tenant.description}</Card.Text>
+                  <Link to={`/tenants/${tenant.id}`}>
+                    <Button variant="primary">View More</Button>
+                  </Link>
+                </Card.Body>
+              </Card>
+            </motion.div>
           </Col>
         ))}
       </Row>
@@ -60,7 +67,9 @@ function TenantList() {
           </Pagination.Item>
         ))}
         <Pagination.Next
-          onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
+          onClick={() =>
+            handlePageChange(Math.min(currentPage + 1, totalPages))
+          }
           disabled={currentPage === totalPages}
         />
       </Pagination>

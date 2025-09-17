@@ -3,6 +3,8 @@ import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { logoutUser } from "../redux/slices/authSlice";
+import { toast, Bounce } from "react-toastify";
+
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -11,7 +13,18 @@ const Header = () => {
 
   const handleLogout = () => {
     dispatch(logoutUser());
-    navigate("/login");
+    toast.success("Logout Successfully!...", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+    });
+    setTimeout(() => navigate("/login"), 2000);
   };
 
   return (

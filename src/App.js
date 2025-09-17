@@ -14,13 +14,14 @@ import ProfileScreen from "./screens/ProfileScreen";
 import { useSelector } from "react-redux";
 import PaymentHistory from "./screens/PaymentHistory";
 import NoticePeriod from "./screens/NoticePeriod";
+import TenantList from "./components/TenantList";
+import TenantDetails from "./components/TenantDetails";
 
 function App() {
-
-   const user = useSelector((state) => state.auth.loggedInUser);
+  const user = useSelector((state) => state.auth.loggedInUser);
   return (
     <Router>
-       {user && <Navbar />}
+      {user && <Navbar />}
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/login" element={<Login />} />
@@ -28,6 +29,8 @@ function App() {
         <Route path="/termsandconditions" element={<Terms />} />
         <Route path="/paymentHistory" element={<PaymentHistory />} />
         <Route path="/noticePeriod" element={<NoticePeriod />} />
+        <Route path='/tenants' element={<TenantList />} />
+        <Route path='/tenants/:id' element={<TenantDetails />} />
         <Route
           path="/home"
           element={
@@ -35,8 +38,6 @@ function App() {
               <Home />
             </PrivateRoute>
           }
-
-            
         />
 
         {/* <Route path="/" element={<Home />} /> */}

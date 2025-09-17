@@ -1,13 +1,14 @@
-// redux/slices/profileSlice.js
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { BASEURL } from '../../constants';
 
-// Fetch profile by userId
 export const fetchProfile = createAsyncThunk(
   "profile/fetchProfile",
   async (id, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`http://192.168.1.30:9491/api/v1/tenants/${id}`);
+            const user = JSON.parse(localStorage.getItem("user"));
+
+      const response = await axios.get(`${BASEURL}/tenants/${id}`);
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response?.data || "Error fetching profile");
@@ -19,9 +20,11 @@ export const updateProfile = createAsyncThunk(
   "profile/updateProfile",
   async ({ id, updatedData }, { rejectWithValue }) => {
     try {
+            const user = JSON.parse(localStorage.getItem("user"));
+
       const response = await axios.put(
-        `http://192.168.1.30:9491/api/v1/tenants/${id}`,
-        { ...updatedData }, // spread so API gets plain object, not nested
+        `${BASEURL}/tenants/${id}`,
+        { ...updatedData }, 
         { headers: { "Content-Type": "application/json" } }
       );
       return response.data;
