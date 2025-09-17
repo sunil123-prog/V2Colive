@@ -60,7 +60,7 @@ const InfoCard = ({
               <li key={idx}>{text}</li>
             ))}
           </ul>
-          {dueText && <h6 className="mt-2">{dueText}</h6>}
+          {dueText && <h6 className="mt-2" style={{color: "#e74c3c"}}>{dueText}</h6>}
         </div>
 
         {/* Button */}
@@ -98,10 +98,10 @@ const PaymentCard = () => {
               "Due dates & paid bills.",
             ]}
             buttonLabel="View Payments"
-            dueText="Due"
+            dueText="Due: ₹ 2,500/-"
             icon="/assets/paymenticon.png"
             onButtonClick={handlePaymentClick}
-            animation="left" // Slide from left
+            animation="left" 
           />
         </Col>
         <Col md={6}>
@@ -109,12 +109,14 @@ const PaymentCard = () => {
             title="Notice Period"
             texts={[
               "Notify the owner 30 days before leaving.",
+              "To avoid deductions or extra charges.",
               "Clear all dues before leaving.",
+              
             ]}
             buttonLabel="View Notice Policy"
             icon="/assets/noticeperiodicon.png"
             onButtonClick={handleNoticeClick}
-            animation="right" // Slide from right
+            animation="right" 
           />
         </Col>
       </Row>

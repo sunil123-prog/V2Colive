@@ -17,12 +17,20 @@ import { motion } from "framer-motion";
 const Footer = () => {
   const footerMotion = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
   };
 
   const itemMotion = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
   };
 
   return (
@@ -46,7 +54,10 @@ const Footer = () => {
                 </Link>
               </motion.li>
               <motion.li variants={itemMotion}>
-                <Link to="/paymentHistory" className="text-light text-decoration-none">
+                <Link
+                  to="/paymentHistory"
+                  className="text-light text-decoration-none"
+                >
                   <FaMoneyBillWave className="me-2" /> Payments
                 </Link>
               </motion.li>
@@ -56,7 +67,10 @@ const Footer = () => {
                 </Link>
               </motion.li>
               <motion.li variants={itemMotion}>
-                <Link to="/noticePeriod" className="text-light text-decoration-none">
+                <Link
+                  to="/noticePeriod"
+                  className="text-light text-decoration-none"
+                >
                   <FaEnvelope className="me-2" /> Notices
                 </Link>
               </motion.li>
@@ -68,12 +82,22 @@ const Footer = () => {
             <motion.h6 className="fw-bold" variants={itemMotion}>
               Follow Us
             </motion.h6>
-            <motion.p variants={itemMotion}>Stay connected with us on social media:</motion.p>
+            <motion.p variants={itemMotion}>
+              Stay connected with us on social media:
+            </motion.p>
             <motion.div className="d-flex gap-3 fs-4" variants={itemMotion}>
-              <a href="#" className="text-light hover-effect"><FaFacebook /></a>
-              <a href="#" className="text-light hover-effect"><FaInstagram /></a>
-              <a href="#" className="text-light hover-effect"><FaTwitter /></a>
-              <a href="#" className="text-light hover-effect"><FaLinkedin /></a>
+              <a href="#" className="text-light hover-effect">
+                <FaFacebook />
+              </a>
+              <a href="#" className="text-light hover-effect">
+                <FaInstagram />
+              </a>
+              <a href="#" className="text-light hover-effect">
+                <FaTwitter />
+              </a>
+              <a href="#" className="text-light hover-effect">
+                <FaLinkedin />
+              </a>
             </motion.div>
           </Col>
 

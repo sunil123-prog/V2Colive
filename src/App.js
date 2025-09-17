@@ -29,8 +29,8 @@ function App() {
         <Route path="/termsandconditions" element={<Terms />} />
         <Route path="/paymentHistory" element={<PaymentHistory />} />
         <Route path="/noticePeriod" element={<NoticePeriod />} />
-        <Route path='/tenants' element={<TenantList />} />
-        <Route path='/tenants/:id' element={<TenantDetails />} />
+        <Route path="/tenants" element={<TenantList />} />
+        <Route path="/tenants/:id" element={<TenantDetails />} />
         <Route
           path="/home"
           element={

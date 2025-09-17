@@ -6,16 +6,14 @@ import { Container } from "react-bootstrap";
 import TenantList from "../components/TenantList";
 import PaymentCard from "../components/PaymentCard";
 import Footer from "../components/Footer";
-import ModalPopUp from '../components/ModalPopUp';
+import ModalPopUp from "../components/ModalPopUp";
 function Home() {
   const [index, setIndex] = useState(0);
 
   return (
     <>
       <Container fluid className="p-0">
-        <ModalPopUp />
-        {" "}
-        {/* full-width container, no padding */}
+        <ModalPopUp /> 
         <Carousel
           activeIndex={index}
           onSelect={(i) => setIndex(i)}
@@ -30,10 +28,10 @@ function Home() {
                 src={tenant.image}
                 alt={tenant.name}
                 style={{
-                  width: "100vw", 
+                  width: "100vw",
                   height: "500px",
                   objectFit: "cover",
-                  borderRadius: "0px", 
+                  borderRadius: "0px",
                 }}
                 initial={{ opacity: 0, scale: 0.95, rotateY: -15 }}
                 animate={{ opacity: 1, scale: 1, rotateY: 0 }}

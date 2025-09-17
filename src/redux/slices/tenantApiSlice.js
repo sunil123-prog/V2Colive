@@ -1,12 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { BASEURL } from '../../constants';
+import { BASEURL } from "../../constants";
 
 export const fetchProfile = createAsyncThunk(
   "profile/fetchProfile",
   async (id, { rejectWithValue }) => {
     try {
-            const user = JSON.parse(localStorage.getItem("user"));
+      const user = JSON.parse(localStorage.getItem("user"));
 
       const response = await axios.get(`${BASEURL}/tenants/${id}`);
       return response.data;
@@ -20,11 +20,11 @@ export const updateProfile = createAsyncThunk(
   "profile/updateProfile",
   async ({ id, updatedData }, { rejectWithValue }) => {
     try {
-            const user = JSON.parse(localStorage.getItem("user"));
+      const user = JSON.parse(localStorage.getItem("user"));
 
       const response = await axios.put(
         `${BASEURL}/tenants/${id}`,
-        { ...updatedData }, 
+        { ...updatedData },
         { headers: { "Content-Type": "application/json" } }
       );
       return response.data;
@@ -33,7 +33,6 @@ export const updateProfile = createAsyncThunk(
     }
   }
 );
-
 
 const profileSlice = createSlice({
   name: "profile",

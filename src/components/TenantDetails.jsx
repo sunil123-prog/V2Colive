@@ -13,11 +13,12 @@ const TenantDetails = () => {
       <Container className="text-center mt-5">
         <h3>PG not found</h3>
         <Link to="/tenants">
-          <Button variant="secondary" className="mt-3">
-            Back to List
+          <Button variant="secondary" className="rounded-pill px-4">
+            ⬅ Back to List
           </Button>
         </Link>
       </Container>
+
     );
   }
 

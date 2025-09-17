@@ -17,12 +17,10 @@ const LoginPopup = () => {
   const location = useLocation();
 
   useEffect(() => {
-
     setShow(true);
   }, []);
 
   useEffect(() => {
-
     if (location.pathname === "/home") {
       setShow(true);
     }
@@ -41,6 +39,8 @@ const LoginPopup = () => {
     "Rs. 2,000 as maintenance charge will be deducted from your security deposit at the time of leaving the PG.",
     "Guest accommodation charges, with or without food, are Rs. 500 per day.",
   ];
+
+  const colors = ["#e74c3c", "#3498db", "#2ecc71", "#f1c40f", "#9b59b6", "#e67e22", "#1abc9c"]; 
 
   return (
     <Modal
@@ -67,12 +67,32 @@ const LoginPopup = () => {
                 initial="hidden"
                 animate="visible"
                 variants={listVariants}
-                style={{ marginBottom: "10px", fontWeight: 500 }}
+                style={{
+                  marginBottom: "10px",
+                  fontWeight: 500,
+                  color: colors[index % colors.length], 
+                }}
               >
                 {rule}
               </motion.li>
             ))}
           </ol>
+
+          {/* Animated greeting */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: rules.length * 0.2 + 0.5, duration: 0.6 }}
+            style={{
+              textAlign: "center",
+              marginTop: "20px",
+              fontWeight: 600,
+              fontSize: "16px",
+              color: "#2c3e50",
+            }}
+          >
+            "Thank you, Welcome to V2CoLive!..."
+          </motion.div>
         </Modal.Body>
         <Modal.Footer className="modal-footer-custom">
           <Button variant="success" onClick={handleClose}>

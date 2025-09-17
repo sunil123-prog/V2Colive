@@ -16,7 +16,7 @@ const ProfileScreen = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const tenantId = user?.tenantId;
 
-  console.log("Tenant ID:", tenantId)
+  console.log("Tenant ID:", tenantId);
 
   const [updateProfileData, setUpdateProfileData] = useState({
     fullName: "",
@@ -169,7 +169,7 @@ const ProfileScreen = () => {
                     />
                   </Form.Group>
 
-                   <Form.Group className="mb-3">
+                  <Form.Group className="mb-3">
                     <Form.Label className="fw-semibold">Email</Form.Label>
                     <Form.Control
                       type="email"
@@ -182,7 +182,7 @@ const ProfileScreen = () => {
                     />
                   </Form.Group>
 
-                   <Form.Group className="mb-3">
+                  <Form.Group className="mb-3">
                     <Form.Label className="fw-semibold">Mobile No</Form.Label>
                     <Form.Control
                       type="mobile"

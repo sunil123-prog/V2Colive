@@ -52,6 +52,8 @@ const Header = () => {
               <NavDropdown
                 title={user?.fullName || user?.email || "User"}
                 id="user-dropdown"
+                align="start"
+                menuVariant="light"
               >
                 <NavDropdown.Item as={Link} to="/profile">
                   Profile

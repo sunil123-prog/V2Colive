@@ -34,7 +34,6 @@ const Login = () => {
     setLoading(true);
 
     try {
-
       const res = await axios.post(`${BASEURL}/tenants/login`, loginData);
       dispatch(loggedInUser(res.data));
 

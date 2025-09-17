@@ -32,7 +32,7 @@ function TenantList() {
               viewport={{ once: true, amount: 0.2 }}
               whileHover={{ scale: 1.05 }}
             >
-              <Card className="shadow-sm border-0 rounded-3">
+              <Card className="shadow-sm border-0 rounded-3" style={{height: "500px"}}>
                 <Card.Img
                   variant="top"
                   src={tenant.image}
