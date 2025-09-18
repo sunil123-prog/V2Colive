@@ -8,8 +8,8 @@ import Footer from "../components/Footer";
 const NoticePeriod = () => {
   const navigate = useNavigate();
   const [noticeData, setNoticeData] = useState({
-    noticeDate: "",
-    reasonForVacating: "",
+    proposedExitOn: "",
+    notes: "",
   });
 
   const handleChange = (e) => {
@@ -65,8 +65,8 @@ const NoticePeriod = () => {
                   <Form.Label className="fw-semibold">Notice Date</Form.Label>
                   <Form.Control
                     type="date"
-                    name="noticeDate"
-                    value={noticeData.noticeDate}
+                    name="proposedExitOn"
+                    value={noticeData.proposedExitOn}
                     onChange={handleChange}
                     required
                     className="rounded-3 shadow-sm"
@@ -87,9 +87,9 @@ const NoticePeriod = () => {
                   <Form.Control
                     as="textarea"
                     rows={4}
-                    name="reasonForVacating"
+                    name="notes"
                     placeholder="Enter your reason..."
-                    value={noticeData.reasonForVacating}
+                    value={noticeData.notes}
                     onChange={handleChange}
                     className="rounded-3 shadow-sm"
                   />

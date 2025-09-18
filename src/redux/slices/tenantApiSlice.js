@@ -8,7 +8,7 @@ export const fetchProfile = createAsyncThunk(
     try {
       const user = JSON.parse(localStorage.getItem("user"));
 
-      const response = await axios.get(`${BASEURL}/tenants/${id}`);
+      const response = await axios.get(`${BASEURL}9491/api/v1/tenants/${id}`);
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response?.data || "Error fetching profile");
@@ -24,7 +24,7 @@ export const updateProfile = createAsyncThunk(
       const user = JSON.parse(localStorage.getItem("user"));
 
       const response = await axios.put(
-        `${BASEURL}/tenants/${tenantId}`,
+        `${BASEURL}9491/api/v1/tenants/${tenantId}`,
         { ...updatedData },
         { headers: { "Content-Type": "application/json" } }
       );

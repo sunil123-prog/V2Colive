@@ -193,7 +193,7 @@ const PaymentHistory = () => {
         )}
 
         {/* Summary Card */}
-        <Card className="mt-4 shadow-sm">
+        {/* <Card className="mt-4 shadow-sm">
           <Card.Body className="text-center">
             <Row>
               <Col>
@@ -206,7 +206,7 @@ const PaymentHistory = () => {
               </Col>
             </Row>
           </Card.Body>
-        </Card>
+        </Card> */}
 
         {/* Back to Home */}
         <div className="text-start mt-3">

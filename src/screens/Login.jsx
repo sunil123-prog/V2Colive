@@ -45,7 +45,7 @@ const Login = () => {
       } : {
         mobile: loginData.identifier, password: loginData.password
       }
-      const res = await axios.post(`${BASEURL}/tenants/login`, payload);
+      const res = await axios.post(`${BASEURL}9491/api/v1/tenants/login`, payload);
       dispatch(loggedInUser(res.data));
 
       toast.success("Login Successful!...", {

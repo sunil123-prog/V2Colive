@@ -76,15 +76,25 @@ const ProfileScreen = () => {
       fullName: updateProfileData.fullName,
       ...(updateProfileData.password && {
         password: updateProfileData.password,
-        confirmPassword: updateProfileData.confirmPassword
+        confirmPassword: updateProfileData.confirmPassword,
       }),
     };
 
     console.log(payload);
 
     try {
-      const resultAction = await dispatch(updateProfile({ tenantId,updatedData: payload }));
+      const resultAction = await dispatch(
+        updateProfile({ tenantId, updatedData: payload })
+      );
       if (updateProfile.fulfilled.match(resultAction)) {
+        const updatedUser = {
+          ...user,
+          fullName: payload.fullName,
+        };
+        localStorage.setItem("user", JSON.stringify(updatedUser));
+
+        // Optionally update Redux state too
+        dispatch(fetchProfile(tenantId));
         toast.success("Profile Updated!...", {
           position: "top-right",
           autoClose: 2000,

@@ -16,6 +16,9 @@ import PaymentHistory from "./screens/PaymentHistory";
 import NoticePeriod from "./screens/NoticePeriod";
 import TenantList from "./components/TenantList";
 import TenantDetails from "./components/TenantDetails";
+import OwnerHome from "./admin/OwnerHome";
+import AddTenant from "./admin/AddTenant";
+import AddRoom from "./admin/AddRoom";
 
 function App() {
   const user = useSelector((state) => state.auth.loggedInUser);
@@ -50,6 +53,10 @@ function App() {
             </PrivateRoute>
           }
         />
+          {/* Admin Routes starts here */}
+        <Route path="/ownerhome" element={<OwnerHome />} />
+        <Route path="/addtenant" element={<AddTenant />} />
+        <Route  path="/addroom" element={<AddRoom />} />
       </Routes>
     </Router>
   );

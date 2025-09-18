@@ -80,7 +80,7 @@ const Register = () => {
     setLoading(true);
     try {
       const res = await axios.post(
-        `${BASEURL}/tenants/register`,
+        `${BASEURL}9491/api/v1/tenants/register`,
         registerForm,
         {
           headers: { "Content-Type": "application/json" },

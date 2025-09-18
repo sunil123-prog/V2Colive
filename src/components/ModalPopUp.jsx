@@ -96,7 +96,7 @@ const LoginPopup = () => {
         </Modal.Body>
         <Modal.Footer className="modal-footer-custom">
           <Button variant="success" onClick={handleClose}>
-            Close
+            OK
           </Button>
         </Modal.Footer>
       </motion.div>

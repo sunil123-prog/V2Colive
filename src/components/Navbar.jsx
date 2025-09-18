@@ -28,15 +28,20 @@ const Header = () => {
   };
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
+    <Navbar bg="primary" variant="primary" expand="lg" sticky="top">
       <Container>
         <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
           <img
             src="/assets/logo.png"
             alt="logo"
-            style={{ width: "50px", height: "50px", borderRadius: "50%" }}
+            style={{
+              width: "50px",
+              height: "50px",
+              borderRadius: "50%",
+              filter: "brightness(0) invert(1)",
+            }}
           />{" "}
-          <span className="fw-bold">V2Colive</span>
+          <span className="fw-bold text-white">V2Colive</span>
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="navbar-login" />
@@ -50,7 +55,11 @@ const Header = () => {
             )}
             {user && (
               <NavDropdown
-                title={user?.fullName || user?.email || "User"}
+                title={
+                  <span style={{ color: "white" }}>
+                    {user?.fullName || user?.email || "User"}
+                  </span>
+                }
                 id="user-dropdown"
                 align="start"
                 menuVariant="light"
